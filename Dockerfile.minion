@@ -1,0 +1,13 @@
+FROM ubuntu:16.04
+
+RUN apt-get update && apt-get upgrade -y
+
+RUN apt-get install -y salt-minion
+
+VOLUME ["/var/logs/salt", "/etc/salt/minion.d"]
+
+ADD minion.d/minion.conf /etc/salt/minion.d/
+
+EXPOSE 80
+
+CMD /usr/bin/salt-minion

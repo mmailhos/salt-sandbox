@@ -1,0 +1,13 @@
+FROM ubuntu:16.04
+
+RUN apt-get update && apt-get upgrade -y
+
+RUN apt-get install -y salt-master
+
+VOLUME ["/etc/salt/master.d", "/var/logs/salt"]
+
+ADD master.d/master.conf /etc/salt/master.d/
+
+EXPOSE 4505 4506
+
+CMD /usr/bin/salt-master
