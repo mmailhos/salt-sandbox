@@ -1,8 +1,5 @@
 version: '2'
 
-volumes:
-  minionv:
-
 services:
   master:
     image: salt-master:v1
@@ -32,4 +29,3 @@ services:
       - ./minion.d:/etc/salt/minion.d
     depends_on:
       - master
-
