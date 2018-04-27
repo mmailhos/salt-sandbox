@@ -18,9 +18,20 @@ services:
       nofile:
         soft: 4096
         hard: 4096
-  minion:
+  jerry:
     image: salt-minion:v1
     hostname: jerry
+    build:
+      context: .
+      dockerfile: Dockerfile.minion
+    command: salt-minion -l info
+    volumes:
+      - ./minion.d:/etc/salt/minion.d
+    depends_on:
+      - master
+  stuart:
+    image: salt-minion:v1
+    hostname: stuart
     build:
       context: .
       dockerfile: Dockerfile.minion
