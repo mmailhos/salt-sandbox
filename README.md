@@ -6,7 +6,7 @@ The project will boot up a Salt Master (master) and two minions (jerry and stuar
 
 Feel free to update the `states/` directory with your own state files to try out your modules outside from your production environment.
 
-If you are new to Salt, check out [a cheatsheet](cheatsheed.md) and run your first commands on this infrastructure.
+If you are new to Salt, check out [cheatsheet](cheatsheet.md) and run your first commands on this infrastructure.
 
 ## Requirements
 
