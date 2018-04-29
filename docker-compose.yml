@@ -9,7 +9,8 @@ services:
     command: salt-master -l info
     volumes:
       - ./master.d:/etc/salt/master.d:ro
-      - ./states/:/srv/salt/:ro
+      - ./states/:/srv/salt:ro
+      - ./pillar/:/srv/pillar:ro
     ports:
       - "4505:4505"
       - "4506:4506"
