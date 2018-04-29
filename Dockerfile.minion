@@ -14,7 +14,7 @@ RUN wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK
 RUN apt-get update && \
     apt-get install -y salt-minion
 
-VOLUME ["/var/logs/salt", "/etc/salt/minion.d", "/etc/salt/pki"]
+VOLUME ["/var/logs/salt", "/etc/salt/minion.d"]
 
 ADD minion.d/minion.conf /etc/salt/minion.d/
 
