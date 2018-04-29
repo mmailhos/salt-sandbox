@@ -6,8 +6,6 @@ The project will boot up a Salt Master (master) and two minions (jerry and stuar
 
 Feel free to update the `states/` directory with your own state files to try out your modules outside from your production environment.
 
-If you are new to Salt, check out [cheatsheet](cheatsheet.md) and run your first commands on this infrastructure.
-
 ## Requirements
 
 You just need a working [Docker Environment](https://docs.docker.com/engine/)
@@ -17,6 +15,20 @@ You just need a working [Docker Environment](https://docs.docker.com/engine/)
 ```
 docker-compose up
 ```
+
+## Volumes
+
+### Master
+
+`./states` is mounted on `/srv/salt`.
+`./pillar` is mounted on `/srv/pillar`.
+`./master.d` is mounted on `/etc/salt/master.d`
+
+### Minions
+
+`./minion.d` is mounted on `/etc/salt/minion.d`
+
+If you are new to Salt, check out [cheatsheet](cheatsheet.md) and run your first commands on this infrastructure.
 
 ## Usage
 
