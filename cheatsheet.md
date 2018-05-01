@@ -80,6 +80,13 @@ docker inspect `docker ps -qf "name=minion"` | grep IPAddress
 
 ## Execute states
 
+To see all available state files:
+```
+sm salt '*' jerry cp.list_states
+```
+
+We can see here that we have our local Apache state in addition to the MySQL remote formula configured from on thesalt  master.
+
 ### Set up Apache
 
 Directly execute the init.sls file of the module:
@@ -109,5 +116,12 @@ sm salt '*' state.sls apache,apache.welcome
 Or better, the high state would have run everything based on `states/top.sls` description
 ```
 sm salt '*' state.highstate
+```
+
+### Finally
+
+It can be a good idea to start a dry run to check for output and indempotency:
+```
+sm salt '*' state.highstate test=True
 ```
 
