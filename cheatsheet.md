@@ -25,6 +25,7 @@ Retrieve the data
 ```
 sm salt '*' grains.ls # List all grains
 sm salt '*' grains.get os_family # Show OS family from all minions
+sm salt '*' grains.items # List all grains with values
 ```
 
 Manipulate the data
